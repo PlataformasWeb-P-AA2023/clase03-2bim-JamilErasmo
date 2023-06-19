@@ -10,6 +10,7 @@ from administrativo.models import *
 
 def index(request):
     # return HttpResponse("Hola mundo desde Python")
+    print("hola desde el index")
     return HttpResponse("Hola mundo desde Python<br/><br/>%s" % (request.path))
 
 def listadoEstudiantes(request):
@@ -38,6 +39,7 @@ def listadoEstudiantesDos(request):
     """
     estudiantes = Estudiante.objects.all()
     mis_numeros_telefonicos = NumeroTelefonico.objects.all()
+    #numeros = NumeroTelefonico
     # en la variable tipo diccionario llamada informacion_template
     # se agregará la información que estará disponible
     # en el template
