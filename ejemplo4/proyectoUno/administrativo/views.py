@@ -24,7 +24,7 @@ def index(request):
     # en la variable tipo diccionario llamada informacion_template
     # se agregará la información que estará disponible
     # en el template
-    informacion_template = {'estudiantes': estudiantes, 'numero_estudiantes': len(estudiantes)}
+    informacion_template = {'estudiantes': estudiantes, 'numero_telefonico': NumeroTelefonico,'numero_estudiantes': len(estudiantes)}
     return render(request, 'index.html', informacion_template)
 
 
@@ -38,6 +38,7 @@ def obtener_estudiante(request, id):
     # se lo almacena en una variable llamada
     # estudiantes
     estudiante = Estudiante.objects.get(pk=id)
+    estudiante = NumeroTelefonico.objects.get(pk=id)
     # en la variable tipo diccionario llamada informacion_template
     # se agregará la información que estará disponible
     # en el template

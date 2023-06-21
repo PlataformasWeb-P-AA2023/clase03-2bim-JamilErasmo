@@ -47,5 +47,12 @@ def busca(request, cadena):
     """
     """
     estudiantes = Estudiante.objects.filter(nombre=cadena).all()
+    
+    informacion_template = {'estudiantes': estudiantes, 'numero_estudiantes': len(estudiantes)}
+    #return render(request, 'busca.html', informacion_template)
+
+
+    estudiantes = Estudiante.objects.filter(nombre=cadena).all()
+    
     informacion_template = {'estudiantes': estudiantes, 'numero_estudiantes': len(estudiantes)}
     return render(request, 'busca.html', informacion_template)
